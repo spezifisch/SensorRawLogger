@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Sensor Raw Logger</string>
-    <string name="service_not_running">Service not running.</string>
+    <string name="service_not_running">Service not running.\nPlease grant permission.</string>
     <string name="service_running">Service running. Start ADB Logcat on your PC.</string>
     <string name="service_failed">Service failed. No permissions, maybe?</string>
 </resources>

@@ -14,7 +14,8 @@ import android.util.Log;
 
 import com.github.spezifisch.sensorrawlogger.Logger;
 
-public class GpsInput extends Service implements LocationListener, GpsStatus.Listener {
+public class GpsInput extends Service implements
+        LocationListener, GpsStatus.Listener {
     private static GpsInput ourInstance = new GpsInput();
     public static GpsInput getInstance() {
         return ourInstance;
@@ -34,7 +35,7 @@ public class GpsInput extends Service implements LocationListener, GpsStatus.Lis
 
         Log.d(TAG, "GpsInput init");
 
-        locationManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
+        locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         gpsStatus = locationManager.getGpsStatus(null);
 
         try {
@@ -47,7 +48,7 @@ public class GpsInput extends Service implements LocationListener, GpsStatus.Lis
             Log.d(TAG, "Last Location: " + loc);
         } catch (SecurityException e) {
             success = false;
-            Log.e(TAG, "No GPS permission");
+            Log.e(TAG, "GPS permission failed");
             e.printStackTrace();
         }
     }
